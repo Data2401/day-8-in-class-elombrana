@@ -1,6 +1,6 @@
 ---
 title: "Lists - In Class Exercises"
-author: "Dr. Shoemaker"
+author: "Eric Lombrana"
 date: "DATA 2401"
 output:nhtml_document
 
@@ -11,7 +11,11 @@ output:nhtml_document
 Make a list that contains the information on a single playing card. Suit, face, and value. 
 
 ```{r}
-
+playing_card <- list( suit = 'Diamonds',
+                      face =  'False',
+                      value = 7
+)
+            
 
 ```
 
@@ -20,7 +24,11 @@ Make a second list where each element contains all the options for suit, face, a
 
 ```{r}
 
-
+card_options <- list(
+  suit = c("heart","diamond","spade","club"),
+  face = c(1:10, "jack","queen","king"),
+  value = c(1:10, 10 ,10 ,10)
+)
 ```
 
 
@@ -28,6 +36,7 @@ If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement tha
 
 ```{r}
 Newlist <- list(a=1:10, b="Good morning", c="Hi")
+Newlist[["a"]] + 1
 
 
 ```
@@ -36,7 +45,9 @@ If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give 
 
 ```{r}
 b <- list(a=1:10, c="Hello", d="AA")
+b$a[-2]
 
+b$a[b$a > 7]
 
 ```
 
@@ -45,5 +56,6 @@ Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new it
 ```{r}
 x <- list(a=5:10, c="Hello", d="AA")
 
-
+x$z <- "NewItem"
+x
 ```
